@@ -1,0 +1,17 @@
+<h1>Reservations</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Start Date</th>
+      <th>End Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sessions.each do |session| %>
+      <tr>
+        <td><%= session.start_date %></td>
+        <td><%= session.end_date %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

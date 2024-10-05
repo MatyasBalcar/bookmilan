@@ -1,0 +1,14 @@
+<h1>New Reservation</h1>
+<%= form_with model: @session, local: true do |form| %>
+  <div>
+    <%= form.label :start_date %>
+    <%= form.date_field :start_date %>
+  </div>
+  <div>
+    <%= form.label :end_date %>
+    <%= form.date_field :end_date %>
+  </div>
+  <div>
+    <%= form.submit 'Create Reservation' %>
+  </div>
+<% end %>
