@@ -1,6 +1,8 @@
 class SessionsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :index]
+
   def index
-    @sessions = Session.all
+    @sessions = current_user.sessions
   end
 
   def new
@@ -8,7 +10,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @session = Session.new(session_params)
+    @session = current_user.sessions.build(session_params)
     if @session.save
       redirect_to sessions_path, notice: 'Reservation created successfully.'
     else

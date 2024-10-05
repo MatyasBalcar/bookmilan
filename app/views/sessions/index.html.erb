@@ -1,9 +1,10 @@
-<h1>Reservations</h1>
+<h1>Reservace</h1>
 <table>
   <thead>
     <tr>
-      <th>Start Date</th>
-      <th>End Date</th>
+      <th>Zacatek</th>
+      <th>Konec</th>
+      <th>Email</th>
     </tr>
   </thead>
   <tbody>
@@ -11,6 +12,8 @@
       <tr>
         <td><%= session.start_date %></td>
         <td><%= session.end_date %></td>
+        <td><%= session.user.email%></td>
+
       </tr>
     <% end %>
   </tbody>
