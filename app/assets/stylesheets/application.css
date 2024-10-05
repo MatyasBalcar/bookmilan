@@ -12,5 +12,32 @@
  *
  *= require_tree .
  *= require_self
+ *= require simple_calendar
+
  */
 @import "bootstrap";
+
+.booked {
+    background-color: #ffcccc;
+}
+
+.simple-calendar {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.simple-calendar th {
+    background: #f2f2f2;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.simple-calendar td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.simple-calendar .booked {
+    background-color: #ffcccc;
+}

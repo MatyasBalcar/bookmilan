@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :index]
 
   def index
-    @sessions = current_user.sessions
+    @sessions = Session.all
   end
 
   def new

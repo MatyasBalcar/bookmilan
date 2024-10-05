@@ -1,4 +1,6 @@
 <h1>Reservace</h1>
+<%= render 'calendar' %>
+
 <table>
   <thead>
     <tr>
@@ -12,8 +14,7 @@
       <tr>
         <td><%= session.start_date %></td>
         <td><%= session.end_date %></td>
-        <td><%= session.user.email%></td>
-
+        <td><%= session.user.email %></td>
       </tr>
     <% end %>
   </tbody>
