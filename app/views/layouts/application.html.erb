@@ -6,42 +6,43 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">MyApp</a>
-        <div class="collapse navbar-collapse">
-          <ul class="navbar-nav mr-auto">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <% if user_signed_in? %>
             <li class="nav-item">
-              <%= link_to 'Home', root_path, class: 'nav-link' %>
+              <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Create time-slot', new_session_path, class: 'nav-link' %>
             </li>
             <li class="nav-item">
               <%= link_to 'Reservations', sessions_path, class: 'nav-link' %>
             </li>
-          </ul>
-          <ul class="navbar-nav ml-auto">
-            <% if user_signed_in? %>
-              <li class="nav-item">
-                <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
-              </li>
-              <li class="nav-item">
-                <%= link_to 'Create time-slot', new_session_path, method: :delete, class: 'nav-link' %>
-              </li>
-            <% else %>
-              <li class="nav-item">
-                <%= link_to 'Sign In', new_user_session_path, class: 'nav-link' %>
-              </li>
-              <li class="nav-item">
-                <%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %>
-              </li>
-            <% end %>
-          </ul>
-        </div>
-      </nav>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+            <li class="nav-item">
+              <%= link_to 'Home', root_path, class: 'nav-link' %>
+            </li>
+
+          <% else %>
+            <li class="nav-item">
+              <%= link_to 'Sign In', new_user_session_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %>
+            </li>
+
+          <% end %>
+        </ul>
+      </div>
+    </nav>
 
     <div class="container mt-4">
       <%= yield %>

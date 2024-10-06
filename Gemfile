@@ -46,8 +46,8 @@ gem "bootsnap", require: false
 
 gem 'fullcalendar-rails'
 
-gem 'bootstrap', '~> 5.1.3'
-gem 'sassc-rails'
+gem "bootstrap"
+gem "sassc-rails"
 
 gem 'devise'
 

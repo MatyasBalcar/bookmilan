@@ -2,5 +2,6 @@
 //= require fullcalendar
 import "@hotwired/turbo-rails";
 import "controllers";
-import "bootstrap";
 import "../stylesheets/application";
+import "popper";
+import "bootstrap";
