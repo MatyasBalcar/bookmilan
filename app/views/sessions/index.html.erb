@@ -1,21 +1,29 @@
 <h1>Rezervace</h1>
 <%= render 'calendar' %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Zacatek</th>
-      <th>Konec</th>
-      <th>Email</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @sessions.each do |session| %>
+<div class="table-responsive">
+  <table class="table table-striped table-hover table-bordered">
+    <thead class="thead-light">
       <tr>
-        <td><%= session.start_date %></td>
-        <td><%= session.end_date %></td>
-        <td><%= session.user.email %></td>
+        <th>Zacatek</th>
+        <th>Konec</th>
+        <th>Email</th>
+        <th>Akce</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @sessions.each do |session| %>
+        <tr>
+          <td><%= session.start_date.strftime("%d %B") %></td>
+          <td><%= session.end_date.strftime("%d %B") %></td>
+          <td><%= session.user.email %></td>
+          <td>
+            <% if current_user.is_admin %>
+              <%= button_to 'Delete', session_path(session), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

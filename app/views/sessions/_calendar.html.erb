@@ -1,6 +1,6 @@
 <%= month_calendar events: @sessions do |date, sessions| %>
   <div class="<%= 'booked' if sessions.any? %>">
-    <%= date %>
+    <%= date.strftime("%d %B") %>
     <% sessions.each do |session| %>
       <div><%= session.user.email %></div>
     <% end %>

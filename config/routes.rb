@@ -18,6 +18,5 @@ Rails.application.routes.draw do
   get 'sessions/index'
   root 'home#index'
 
-  resources :sessions, only: [:new, :create, :index]
-
+  resources :sessions, only: [:new, :create, :index, :show, :edit, :update, :destroy]
 end
