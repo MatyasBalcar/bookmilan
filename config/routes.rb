@@ -1,12 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  get 'reservation/new'
-  get 'reservation/create'
-  get 'reseration/index'
-  get 'reservation/show'
-
-
   get 'home/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
