@@ -12,14 +12,14 @@
       </tr>
     </thead>
     <tbody>
-      <% @sessions.each do |session| %>
+      <% @reservations.each do |reservation| %>
         <tr>
-          <td><%= session.start_date.strftime("%d %B") %></td>
-          <td><%= session.end_date.strftime("%d %B") %></td>
-          <td><%= session.user.email %></td>
+          <td><%= reservation.start_date.strftime("%d %B") %></td>
+          <td><%= reservation.end_date.strftime("%d %B") %></td>
+          <td><%= reservation.user.email %></td>
           <td>
             <% if current_user.is_admin %>
-              <%= button_to 'Delete', session_path(session), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %>
+              <%= button_to 'Delete', reservation_path(reservation), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %>
             <% end %>
           </td>
         </tr>

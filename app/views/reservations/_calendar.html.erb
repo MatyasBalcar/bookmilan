@@ -1,0 +1,8 @@
+<%= month_calendar events: @reservations do |date, reservations| %>
+  <div class="<%= 'booked' if reservations.any? %>">
+    <%= date.strftime("%d %B") %>
+    <% reservations.each do |reservation| %>
+      <div><%= reservation.user.email %></div>
+    <% end %>
+  </div>
+<% end %>

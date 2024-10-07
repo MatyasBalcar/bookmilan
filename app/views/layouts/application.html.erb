@@ -22,10 +22,10 @@
               <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn btn-outline-danger' %>
             </li>
             <li class="nav-item">
-              <%= link_to 'Create time-slot', new_session_path, class: 'nav-link' %>
+              <%= link_to 'Create time-slot', new_reservation_path, class: 'nav-link' %>
             </li>
             <li class="nav-item">
-              <%= link_to 'Reservations', sessions_path, class: 'nav-link' %>
+              <%= link_to 'Reservations', reservations_path, class: 'nav-link' %>
             </li>
             <li class="nav-item">
               <%= link_to 'Home', root_path, class: 'nav-link' %>
